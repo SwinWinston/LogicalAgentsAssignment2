@@ -16,11 +16,11 @@ class TestForwardChaining(unittest.TestCase):
         ]
         for rule in rules:
             self.kb.tell(rule)
-        self.kb.forward_chain()  # Corrected typo here
+        self.kb.forward_chain() 
         self.assertTrue(self.kb.ask("D"))
     
-    def test_complex_dependencies(self):
-        # Complex dependencies with conjunctions
+    def test_complex_dependencies(self): 
+        # Testing Complex Dependencies with Conjunctions
         rules = [
             "A & B => C",
             "C & D => E"
@@ -30,12 +30,11 @@ class TestForwardChaining(unittest.TestCase):
             self.kb.tell(fact)
         for rule in rules:
             self.kb.tell(rule)
-        self.kb.forward_chain()  # Corrected typo here
+        self.kb.forward_chain()  
         self.assertTrue(self.kb.ask("E"))
 
     def test_circular_dependencies(self):
-        # Rules that create a loop 
-        rules = [
+        rules = [ # Rules that create a loop 
             "A => B",
             "B => A"
         ]
